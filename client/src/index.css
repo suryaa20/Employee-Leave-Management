@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-dark-text;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Better default focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-dark-bg;
+  }
+
+  /* Improve default link styles */
+  a {
+    @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-dark-card rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500 transition-colors;
+  }
+}
+
+@layer components {
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-800 dark:bg-dark-border dark:text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:focus:ring-offset-dark-bg border border-gray-200 dark:border-transparent;
+  }
+
+  /* Form Input Styles */
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 dark:disabled:bg-slate-900 disabled:cursor-not-allowed bg-white dark:bg-dark-bg text-gray-900 dark:text-slate-100;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white dark:bg-dark-card rounded-xl shadow-md hover:shadow-lg dark:shadow-black/20 transition-all duration-200 overflow-hidden border border-gray-100 dark:border-dark-border/50;
+  }
+
+  /* Table Styles */
+  .table-header {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wider bg-gray-50 dark:bg-slate-800/50;
+  }
+
+  .table-row {
+    @apply hover:bg-gray-50 dark:hover:bg-slate-800/30 transition-colors border-b border-gray-100 dark:border-dark-border/50;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-slate-200;
+  }
+
+  /* Stat Cards */
+  .stat-card {
+    @apply bg-white dark:bg-dark-card p-6 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-dark-border/50;
+  }
+
+  .stat-card-blue {
+    @apply stat-card border-l-4 border-l-primary-500;
+  }
+
+  .stat-card-green {
+    @apply stat-card border-l-4 border-l-green-500;
+  }
+
+  .stat-card-yellow {
+    @apply stat-card border-l-4 border-l-yellow-500;
+  }
+
+  .stat-card-purple {
+    @apply stat-card border-l-4 border-l-purple-500;
+  }
+
+  /* Status Badges */
+  .badge {
+    @apply px-2.5 py-0.5 inline-flex items-center text-xs leading-5 font-semibold rounded-full;
+  }
+
+  .badge-pending {
+    @apply badge bg-yellow-100 text-yellow-800 dark:bg-yellow-500/10 dark:text-yellow-400 dark:border dark:border-yellow-500/20;
+  }
+
+  .badge-approved {
+    @apply badge bg-green-100 text-green-800 dark:bg-green-500/10 dark:text-green-400 dark:border dark:border-green-500/20;
+  }
+
+  .badge-rejected {
+    @apply badge bg-red-100 text-red-800 dark:bg-red-500/10 dark:text-red-400 dark:border dark:border-red-500/20;
+  }
+
+  .badge-paid {
+    @apply badge bg-blue-100 text-blue-800 dark:bg-blue-500/10 dark:text-blue-400 dark:border dark:border-blue-500/20;
+  }
+
+  /* Global Dark Mode Overrides */
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    @apply text-slate-100 !important;
+  }
+
+  .dark p,
+  .dark label,
+  .dark .text-gray-400,
+  .dark .text-gray-500,
+  .dark .text-gray-600 {
+    @apply text-slate-300 !important;
+  }
+
+  .dark .text-gray-700,
+  .dark .text-gray-800,
+  .dark .text-gray-900 {
+    @apply text-white !important;
+  }
+
+  .dark .bg-white {
+    @apply bg-dark-card !important;
+  }
+
+  .dark .bg-gray-50,
+  .dark .bg-gray-100 {
+    @apply bg-dark-bg !important;
+  }
+
+  .dark .border-gray-100,
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    @apply border-dark-border !important;
+  }
+
+  .dark .shadow-sm,
+  .dark .shadow-md,
+  .dark .shadow-lg,
+  .dark .shadow-xl,
+  .dark .shadow-2xl {
+    @apply shadow-black/40 !important;
+  }
+
+  /* Specific fixes for items that might be hardcoded or missing classes */
+  .dark .inline-block.animate-spin {
+    @apply border-primary-400 !important;
+  }
+}
+
+/* Dark mode transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}

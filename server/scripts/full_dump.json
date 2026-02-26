@@ -1,0 +1,87 @@
+{
+  "leaves": [
+    {
+      "_id": "699e17a78d999f90fca68e0e",
+      "employeeId": "699e12c85ae8b135cb759805",
+      "employeeName": "employee1",
+      "leaveType": "sick",
+      "fromDate": "2026-02-26T00:00:00.000Z",
+      "toDate": "2026-02-26T00:00:00.000Z",
+      "numberOfDays": 1,
+      "reason": "Sick leave",
+      "status": "approved",
+      "comments": "",
+      "appliedDate": "2026-02-24T21:27:03.697Z",
+      "createdAt": "2026-02-24T21:27:03.698Z",
+      "updatedAt": "2026-02-24T21:39:09.299Z",
+      "__v": 0,
+      "approvedBy": "699e187f59ed834036a03765",
+      "approvedDate": "2026-02-24T21:39:09.281Z"
+    }
+  ],
+  "project": [
+    {
+      "_id": "699d52e33f0122b97bfc432f",
+      "name": "Admin User",
+      "email": "admin@leavems.com",
+      "password": "$2a$10$yf5vQfevxW03MfbGVQuOWeJva2vqR4SB48TISZl5sI6vg.MR9hKu2",
+      "role": "admin",
+      "department": "Management",
+      "profilePicture": "",
+      "phoneNumber": "",
+      "address": "",
+      "leaveBalance": {
+        "annual": 0,
+        "sick": 0,
+        "casual": 0
+      },
+      "isActive": true,
+      "createdAt": "2026-02-24T07:27:31.189Z",
+      "updatedAt": "2026-02-26T00:30:47.365Z",
+      "__v": 0,
+      "lastLogin": "2026-02-26T00:30:47.363Z"
+    },
+    {
+      "_id": "699e12c85ae8b135cb759805",
+      "name": "employee1",
+      "email": "employee1@gmail.com",
+      "password": "$2a$10$wpwhgQl76AZcP7bSUs95levDRmBTEDtslAR0gZHEzuJaZ.RLIaxi2",
+      "role": "employee",
+      "department": "General",
+      "profilePicture": "",
+      "phoneNumber": "1234567890",
+      "address": "",
+      "leaveBalance": {
+        "annual": 20,
+        "sick": 11,
+        "casual": 10
+      },
+      "isActive": true,
+      "createdAt": "2026-02-24T21:06:16.991Z",
+      "updatedAt": "2026-02-26T00:36:01.384Z",
+      "__v": 0,
+      "lastLogin": "2026-02-26T00:36:01.383Z"
+    },
+    {
+      "_id": "699e187f59ed834036a03765",
+      "name": "manager1",
+      "email": "manager1@gmail.com",
+      "password": "$2a$10$DfSZ0TwFX1J7VZ94qeKHRuUxQN8VlEh3zybEoRXGtTZ5YLjEr3CIy",
+      "role": "manager",
+      "department": "General",
+      "profilePicture": "",
+      "phoneNumber": "1234567890",
+      "address": "",
+      "leaveBalance": {
+        "annual": 20,
+        "sick": 12,
+        "casual": 10
+      },
+      "isActive": true,
+      "createdAt": "2026-02-24T21:30:39.857Z",
+      "updatedAt": "2026-02-26T00:24:41.917Z",
+      "__v": 0,
+      "lastLogin": "2026-02-26T00:24:41.916Z"
+    }
+  ]
+}
