@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: employee-leave-backend
+    env: node
+    region: oregon # You can change this to your preferred region (e.g., frankfurt, ohio, singapore)
+    buildCommand: "cd server && npm install"
+    startCommand: "cd server && npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false # Render will prompt you to enter this value in the dashboard
+      - key: JWT_SECRET
+        generateValue: true # Render will automatically generate a strong random secret
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: CLIENT_URL
+        sync: false # Render will prompt you to enter this value
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: employee-leave-frontend
+    env: static
+    region: oregon 
+    buildCommand: "cd client && npm install && npm run build"
+    staticPublishPath: "client/dist"
+    envVars:
+      - key: VITE_API_URL
+        sync: false # Render will prompt you to enter this value
