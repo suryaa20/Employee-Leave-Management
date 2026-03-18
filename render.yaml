@@ -3,12 +3,13 @@ services:
     name: employee-leave-backend
     env: node
     plan: free # Added explicit free plan here!
-  
     buildCommand: "cd server && npm install"
     startCommand: "cd server && npm start"
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 20
       - key: MONGODB_URI
         sync: false # Render will prompt you to enter this value in the dashboard
       - key: JWT_SECRET
@@ -23,10 +24,11 @@ services:
   - type: web
     name: employee-leave-frontend
     env: static
-
     buildCommand: "cd client && npm install && npm run build"
     staticPublishPath: "client/dist"
     envVars:
+      - key: NODE_VERSION
+        value: 20
       - key: VITE_API_URL
         sync: false # Render will prompt you to enter this value
     routes:
